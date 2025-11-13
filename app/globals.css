@@ -24,3 +24,28 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body, #__next {
+height: 100%;
+}
+
+
+body {
+@apply bg-neutral-900 text-white antialiased;
+}
+
+
+::-webkit-scrollbar {
+height: 8px;
+width: 8px;
+}
+
+
+::-webkit-scrollbar-thumb {
+background: rgba(255,255,255,0.12);
+border-radius: 9999px;
+}
