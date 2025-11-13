@@ -71,7 +71,7 @@ export default function HeroCarousel({ movies }: Props) {
             return (
               <div
                 key={movie.id}
-                className="relative flex-[0_0_100%] bg-black min-h-[60vh] md:min-h-[60vh] lg:min-h-[70vh] overflow-hidden"
+                className="relative flex-[0_0_100%] bg-black min-h-[60vh] md:min-h-[60vh] lg:min-h-[71vh] overflow-hidden"
               >
                 <Image
                   src={src}
@@ -87,7 +87,7 @@ export default function HeroCarousel({ movies }: Props) {
                   <p className="mt-2 text-sm md:text-base text-white/90 line-clamp-3 max-w-lg">{movie.overview}</p>
                   <div className="mt-4 flex gap-3">
                     <Link href={`/movie/${movie.id}`} className="px-4 py-2 rounded bg-white text-black font-semibold">Play</Link>
-                    <button className="px-4 py-2 rounded border border-white/20 text-white">More Info</button>
+                    {/* <button className="px-4 py-2 rounded border border-white/20 text-white">More Info</button> */}
                   </div>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function HeroCarousel({ movies }: Props) {
         ›
       </button>
 
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-4 z-20 flex gap-2">
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-2 z-20  flex gap-2">
         {movies.map((_, i) => (
           <button
             key={i}
