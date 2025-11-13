@@ -58,7 +58,7 @@ export default function HeroCarousel({ movies }: Props) {
 
   return (
     <section
-      className="relative w-full overflow-hidden pt-16"
+      className="relative w-full overflow-hidden pt-14"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
