@@ -49,3 +49,11 @@ width: 8px;
 background: rgba(255,255,255,0.12);
 border-radius: 9999px;
 }
+@keyframes slideDown {
+  from { transform: translateY(-8px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-down {
+  animation: slideDown 240ms cubic-bezier(.2,.9,.3,1);
+}
+

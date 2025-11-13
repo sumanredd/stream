@@ -66,19 +66,20 @@ export default async function MoviePage({
   return (
     <div className="bg-neutral-900 text-white min-h-screen">
       {backdrop && (
-        <div className="relative h-56 md:h-85 w-full">
-          <Image
-            src={backdrop}
-            alt={movie?.title ?? "Backdrop"}
-            fill
-            priority
-            style={{ objectFit: "cover" }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
-        </div>
-      )}
+  <div className="hidden md:block relative h-56 md:h-80 w-full">
+    <Image
+      src={backdrop}
+      alt={movie?.title ?? "Backdrop"}
+      fill
+      priority
+      style={{ objectFit: "cover" }}
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
+  </div>
+)}
 
-      <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 pb-20">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 pb-20 pt-24 md:pt-8">
+
         <div className="flex flex-col md:flex-row gap-6">
           <div className="md:w-1/3 w-full">
             <div className="rounded overflow-hidden shadow-lg">
