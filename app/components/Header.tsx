@@ -3,12 +3,13 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { IoSearchOutline } from "react-icons/io5";
 
 export default function Header() {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<any[]>([])
-  const [open, setOpen] = useState(false) // results dropdown
-  const [mobileSearchOpen, setMobileSearchOpen] = useState(false) // mobile full-width search
+  const [open, setOpen] = useState(false) 
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false) 
   const [loading, setLoading] = useState(false)
   const boxRef = useRef<HTMLDivElement | null>(null)
 
@@ -66,14 +67,14 @@ export default function Header() {
 
           <ul className="hidden md:flex gap-4 text-sm opacity-90">
             <Link href="/"><li className="cursor-pointer">Home</li></Link>
-            <Link href="/movies"><li className="cursor-pointer">Movies</li></Link>
-            <Link href="/tv"><li className="cursor-pointer">TV</li></Link>
+            {/* <Link href="/movies"><li className="cursor-pointer">Movies</li></Link>
+            <Link href="/tv"><li className="cursor-pointer">TV</li></Link> */}
           </ul>
         </div>
 
        
         <div className="flex items-center gap-4">
-          {/* Desktop search (visible md+) */}
+         
           <div ref={boxRef} className="relative hidden md:block w-80">
             <input
               value={query}
@@ -110,7 +111,7 @@ export default function Header() {
              
             }}
           >
-            🔍
+<IoSearchOutline />
           </button>
         </div>
       </nav>
