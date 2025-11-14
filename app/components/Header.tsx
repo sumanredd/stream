@@ -8,15 +8,22 @@ import { IoSearchOutline } from "react-icons/io5";
 export default function Header() {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<any[]>([])
-  const [open, setOpen] = useState(false) 
-  const [mobileSearchOpen, setMobileSearchOpen] = useState(false) 
+  const [open, setOpen] = useState(false)
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false)
   const [loading, setLoading] = useState(false)
-  const boxRef = useRef<HTMLDivElement | null>(null)
 
+  // separate refs for desktop and mobile containers
+  const desktopRef = useRef<HTMLDivElement | null>(null)
+  const mobileRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    function handleClick(e: any) {
-      if (boxRef.current && !boxRef.current.contains(e.target)) {
+    function handleClick(e: MouseEvent) {
+      const target = e.target as Node | null
+      const clickedInsideDesktop = desktopRef.current?.contains(target ?? null)
+      const clickedInsideMobile = mobileRef.current?.contains(target ?? null)
+
+      // if click is not inside either, close both
+      if (!clickedInsideDesktop && !clickedInsideMobile) {
         setOpen(false)
         setMobileSearchOpen(false)
       }
@@ -25,7 +32,6 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClick)
   }, [])
 
- 
   useEffect(() => {
     if (!query.trim()) {
       setResults([])
@@ -51,7 +57,6 @@ export default function Header() {
     return () => clearTimeout(t)
   }, [query])
 
-
   function handleSelect() {
     setQuery('')
     setOpen(false)
@@ -61,21 +66,16 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10">
       <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-       
         <div className="flex items-center gap-6">
           <Link href="/" className="text-2xl font-bold">Stream</Link>
 
           <ul className="hidden md:flex gap-4 text-sm opacity-90">
             <Link href="/"><li className="cursor-pointer">Home</li></Link>
-            {/* <Link href="/movies"><li className="cursor-pointer">Movies</li></Link>
-            <Link href="/tv"><li className="cursor-pointer">TV</li></Link> */}
           </ul>
         </div>
 
-       
         <div className="flex items-center gap-4">
-         
-          <div ref={boxRef} className="relative hidden md:block w-80">
+          <div ref={desktopRef} className="relative hidden md:block w-80">
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -96,33 +96,29 @@ export default function Header() {
             )}
           </div>
 
-      
           <button className="hidden md:inline-block text-sm px-3 py-1 border border-white/20 rounded">
             Sign In
           </button>
 
-       
           <button
             className="md:hidden text-xl p-1"
             aria-label="Open search"
             onClick={() => {
               setMobileSearchOpen((v) => !v)
               setOpen(false)
-             
             }}
           >
-<IoSearchOutline />
+            <IoSearchOutline />
           </button>
         </div>
       </nav>
 
-    
       <div
         className={`md:hidden w-full bg-black/70 border-t border-white/5 overflow-hidden ${
           mobileSearchOpen ? 'animate-slide-down' : 'hidden'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-4 py-3" ref={boxRef}>
+        <div className="max-w-6xl mx-auto px-4 py-3" ref={mobileRef}>
           <div className="flex items-center gap-3">
             <input
               value={query}
@@ -149,7 +145,6 @@ export default function Header() {
     </header>
   )
 }
-
 
 function SearchResults({ results, loading, onSelect }: any) {
   return (
