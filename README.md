@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Overview
+
+This project is a simplified streaming dashboard built with Next.js 14, TypeScript, and Tailwind. It fetches movie data from the TMDB API and displays a hero banner, multiple horizontal movie rows, and a detail page for each movie. The app is deployed on Vercel.
+
+## Features
+
+=> Next.js 14 App Router
+
+=> Server-side fetching
+
+=> Hero banner
+
+=> Reusable movie rows with horizontal scroll
+
+=> Dynamic movie detail pages
+
+=> Fully responsive layout
+
+=> Tailwind-based UI
+
+=> Vercel deployment with environment variables
+
+## Tech Stack
+
+=> Next.js 14
+
+=> TypeScript
+
+=> Tailwind CSS
+
+=> TMDB API
+
+=> Vercel
 
 ## Getting Started
-
-First, run the development server:
-
 ```bash
+1. Clone the repo
+git clone https://github.com/sumanredd/stream
+cd stream
+
+2. Install dependencies
+npm install
+# or
+pnpm install
+# or
+yarn install
+
+3. Add environment variables
+
+Create a .env.local file:
+
+TMDB_API_KEY=your_tmdb_api_key
+
+
+Do not commit this file.
+
+4. Run the project
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App runs at **http://localhost:3000**.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is deployed on Vercel.
 
-## Learn More
+To deploy your own version:
 
-To learn more about Next.js, take a look at the following resources:
+Push to GitHub
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Import the repo in Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Add TMDB_API_KEY in Project Settings → Environment Variables
 
-## Deploy on Vercel
+Trigger a deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
+```bash 
+  app/
+  layout.tsx
+  page.tsx
+  movie/[id]/page.tsx
+  components/
+    Header.tsx
+    HeroBanner.tsx
+    MovieRow.tsx
+    MovieCard.tsx
+types/
+  movie.ts
+lib/
+  tmdb.ts
+```
+## Scripts
+```bash
+dev – start development server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+build – build for production
+
+start – run production build
+```
+## AI Usage
+See AI_Report.md in the repository for details.
