@@ -99,4 +99,4 @@ build – build for production
 start – run production build
 ```
 ## AI Usage
-See AI_Report.md in the repository for details.
+See **AI_Report.md** in the repository for details.
