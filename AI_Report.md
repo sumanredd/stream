@@ -29,10 +29,10 @@ All files were written manually and adjusted to match the project needs. No AI-g
 
 ## Project Links
 
-# Vercel Deployment:
+### Vercel Deployment:
 **https://your-vercel-url-here**
 
-# GitHub Repository:
+### GitHub Repository:
 **https://github.com/your-repo-here**
 
 ## Summary
