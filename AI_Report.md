@@ -1,9 +1,9 @@
-## AI Tools Used
+# AI Tools Used
 
 ChatGPT was used for guidance, clarifying errors, understanding TMDB endpoints, and getting small code examples.
 
 
-## Parts of the Project That Used AI Assistance Heavily
+# Parts of the Project That Used AI Assistance Heavily
 
 AI assistance was mainly used for support, not full code generation. These areas used AI guidance more than others:
 
@@ -27,7 +27,7 @@ Used AI for examples of server-side fetch helpers and safe error handling patter
 
 All files were written manually and adjusted to match the project needs. No AI-generated code was pasted directly without modification.
 
-## Project Links
+# Project Links
 
 ### Vercel Deployment:
 **https://your-vercel-url-here**
@@ -35,7 +35,7 @@ All files were written manually and adjusted to match the project needs. No AI-g
 ### GitHub Repository:
 **https://github.com/your-repo-here**
 
-## Summary
+# Summary
 
 AI was used as a support tool for planning, debugging, and getting specific code hints.
 All core logic, UI components, routing, data fetching, styling, and deployment work were implemented manually.
