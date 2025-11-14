@@ -30,10 +30,10 @@ All files were written manually and adjusted to match the project needs. No AI-g
 # Project Links
 
 ### Vercel Deployment:
-**https://your-vercel-url-here**
+**https://stream-obtj.vercel.app**
 
 ### GitHub Repository:
-**https://github.com/your-repo-here**
+**https://github.com/sumanredd/stream**
 
 # Summary
 
