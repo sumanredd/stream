@@ -66,7 +66,7 @@ export default async function MoviePage({
   return (
     <div className="bg-neutral-900 text-white min-h-screen">
       {backdrop && (
-  <div className="hidden md:block relative h-56 md:h-80 w-full">
+  <div className="hidden md:block relative h-56   md:h-80 w-full">
     <Image
       src={backdrop}
       alt={movie?.title ?? "Backdrop"}
